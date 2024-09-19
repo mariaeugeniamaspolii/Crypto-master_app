@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="assets/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <title>Convertor</title>
+</head>
+<body id="body">
+    <!-- <h1>Convertor</h1> -->
+
+        <!--Header-->
+        <header class="header ">
+            <nav class="navbar navbar-expand-lg py-3 navbar-dark">
+            <div class="container p-md-0 justify-content-between">
+                <a class="navbar-brand" href="#">
+                    <i class="bi bi-arrow-left"></i>
+                </a>
+                <a class="navbar-brand justify-content-center d-flex m-auto" href="index.html">
+                    <h1>Cripto-Convertor</h1>
+                </a>
+                <a class="navbar-brand me-0" href="#">
+                    <i class="bi bi-list"></i>
+                </a>
+            </div>
+            </nav>            
+        </header>
+        <!--/Header-->
+
+
+        <div class="content">
+            <div class="container">
+
+                <form id="formConvert" class="mb-4">
+                    <div class="row mb-4 align-self-stretch">
+
+                    <!-- crypto list -->
+                    <div id="select-box-crypto" class="col-5 order-0"> 
+                    </div>
+                    
+                    <!-- swap -->
+                    <div class="col-2 align-self-stretch d-flex" style="order: 1;">
+                        <input type="checkbox" id="coinSwapper" class="d-none">
+                        <label onclick="coinSwapperToggle(this)" id="coinSwapper-label" for="coinSwapper" class="align-self-stretch btn btn-form w-100"> <i class="bi bi-arrow-left-right"></i> </label>
+                    </div>
+
+                    <!-- coin list -->
+                    <div id="select-box-coin" class="col-5 order-2">
+                    </div>
+
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-5">
+                            <!-- <label for="amount">amount</label> -->
+                            <input type="number" name="amount" id="inpAmount" class="w-100" placeholder="amount">
+                        </div>
+                        <div class="col-7">
+                            <!-- <label for="datePicker">date</label> -->
+                            <input type="date" name="datePicker" id="inpDate"  class="w-100">
+                        </div>
+                    </div>
+                    
+                    <div id="errorUsuario" class="alert alert-danger d-none" role="alert">
+                        A danger alert!
+                    </div>
+
+                    <div class="justify-content-end col-12 d-flex mb-5">
+                        <button class="btn btn-lg btn-primary" id="btnConvert" type="submit">convert</button>
+                    </div>
+                </form>
+
+                <main class="mt-5 mb-2">
+                    <div class="row justify-content-center" id="dataConvert">
+                    </div>
+                    
+                </main>
+                
+                <div class="" style="height: 400px;">
+                    <canvas id="convertChart" class=""></canvas>
+                </div>
+
+                <section id="loading" class="bg-light bg-opacity-75 position-absolute top-0 start-0 end-0 bottom-0 d-flex justify-content-center align-items-center d-none">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2 "></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script> -->
+        
+        <script src="assets/js/main.js"></script>
+</body>
+</html>
